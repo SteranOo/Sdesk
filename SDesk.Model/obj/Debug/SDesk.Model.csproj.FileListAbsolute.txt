@@ -1,0 +1,5 @@
+D:\Lab\SDesk\SDesk.Model\bin\Debug\SDesk.Model.dll
+D:\Lab\SDesk\SDesk.Model\bin\Debug\SDesk.Model.pdb
+D:\Lab\SDesk\SDesk.Model\obj\Debug\SDesk.Model.csprojResolveAssemblyReference.cache
+D:\Lab\SDesk\SDesk.Model\obj\Debug\SDesk.Model.dll
+D:\Lab\SDesk\SDesk.Model\obj\Debug\SDesk.Model.pdb

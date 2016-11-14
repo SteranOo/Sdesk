@@ -1,0 +1,17 @@
+D:\Lab\SDesk\SDesk.API\bin\Debug\SDesk.API.dll
+D:\Lab\SDesk\SDesk.API\bin\Debug\SDesk.API.pdb
+D:\Lab\SDesk\SDesk.API\bin\Debug\Newtonsoft.Json.dll
+D:\Lab\SDesk\SDesk.API\bin\Debug\System.Net.Http.Formatting.dll
+D:\Lab\SDesk\SDesk.API\bin\Debug\System.Web.Http.dll
+D:\Lab\SDesk\SDesk.API\bin\Debug\Newtonsoft.Json.xml
+D:\Lab\SDesk\SDesk.API\bin\Debug\System.Net.Http.Formatting.xml
+D:\Lab\SDesk\SDesk.API\bin\Debug\System.Web.Http.xml
+D:\Lab\SDesk\SDesk.API\obj\Debug\SDesk.API.csprojResolveAssemblyReference.cache
+D:\Lab\SDesk\SDesk.API\obj\Debug\SDesk.API.dll
+D:\Lab\SDesk\SDesk.API\obj\Debug\SDesk.API.pdb
+D:\Lab\SDesk\SDesk.API\bin\Debug\SDesk.DAL.dll
+D:\Lab\SDesk\SDesk.API\bin\Debug\SDesk.Model.dll
+D:\Lab\SDesk\SDesk.API\bin\Debug\SDesk.DAL.pdb
+D:\Lab\SDesk\SDesk.API\bin\Debug\SDesk.Model.pdb
+D:\Lab\SDesk\SDesk.API\bin\Debug\AutoMapper.dll
+D:\Lab\SDesk\SDesk.API\bin\Debug\AutoMapper.xml
