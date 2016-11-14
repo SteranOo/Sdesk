@@ -8,7 +8,10 @@ namespace SDesk.DAL
     public class DbFake
     {
         public static List<Mail> Mails { get; set; }
+
         public static List<Attachement> Attachements { get; set; }
+
+        public static List<JiraItem> JiraItems { get; set; }
 
         static DbFake()
         {
@@ -59,6 +62,24 @@ namespace SDesk.DAL
                     Path = "~/other_some_path",
                     MailId = 2,
                     StatusId = 1
+                }
+            });
+
+            JiraItems = new List<JiraItem>(new []
+            {
+                new JiraItem
+                {
+                    JiraItemId = 1,
+                    JiraNumber = 1,
+                    RequestIdType = 1,
+                    JiraSourceId = 1
+                },
+                new JiraItem
+                {
+                    JiraItemId = 2,
+                    JiraNumber = 2,
+                    RequestIdType = 2,
+                    JiraSourceId = 2
                 }
             });
         }

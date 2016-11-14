@@ -9,9 +9,8 @@ namespace SDesk.SelfHost
         public void Configuration(IAppBuilder appBuilder)
         {
             var config = new HttpConfiguration();
-
-            config.MapHttpAttributeRoutes();
-            RouteConfig.RegisterRoutes(config.Routes);
+          
+            HttpRoutesConfig.RegisterRoutes(config);
 
             appBuilder.UseWebApi(config);
         }

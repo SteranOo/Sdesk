@@ -44,6 +44,7 @@
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Web" />
     <Reference Include="System.Web.Http">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
     </Reference>
@@ -55,9 +56,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Configuration\RouteConfig.cs" />
+    <Compile Include="Attributes\VersionedRoute.cs" />
+    <Compile Include="Configuration\HttpRoutesConfig.cs" />
+    <Compile Include="Constraints\JiraIdConstraint.cs" />
+    <Compile Include="Constraints\VersionConstraint.cs" />
     <Compile Include="Controllers\AttachementsController.cs" />
+    <Compile Include="Controllers\JiraItemsController.cs" />
     <Compile Include="Controllers\MailsController.cs" />
+    <Compile Include="Controllers\Mails2Controller.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -1,39 +1,43 @@
-﻿using System.Collections.Generic;
-using System.Web.Http;
+﻿using System.Web.Http;
 using AutoMapper;
+using SDesk.API.Attributes;
 using SDesk.DAL;
 using SDesk.Model;
 
 namespace SDesk.API.Controllers
 {
+    [VersionedRoute("api/mails", 1)]
     public class MailsController : ApiController
     {
-        public IEnumerable<Mail> Get()
+        public IHttpActionResult Get()
         {
-            return DbFake.Mails;
+            return Ok(DbFake.Mails);
         }
 
-        public Mail Get(int id)
+        public IHttpActionResult Get(int id)
         {
-            return DbFake.Mails.Find(x=>x.Id == id);
+            return Ok(DbFake.Mails.Find(x=>x.Id == id));
         }
       
-        public void Post([FromBody]Mail mail)
+        public IHttpActionResult Post([FromBody]Mail mail)
         {
             DbFake.Mails.Add(mail);
+            return Ok();
         }
 
-        public void Put(int id, [FromBody]Mail mail)
+        public IHttpActionResult Put(int id, [FromBody]Mail mail)
         {
             var entity = DbFake.Mails.Find(x => x.Id == id);
             _mapper.Map(mail, entity);
+            return Ok();
         }
      
-        public void Delete(int id)
+        public IHttpActionResult Delete(int id)
         {
             DbFake.Mails.Remove(DbFake.Mails.Find(x => x.Id == id));
+            return Ok();
         }
 
-        private IMapper _mapper = new Mapper(new MapperConfiguration(cfg => cfg.CreateMap<Mail, Mail>()));
+        private readonly IMapper _mapper = new Mapper(new MapperConfiguration(cfg => cfg.CreateMap<Mail, Mail>()));
     }
 }

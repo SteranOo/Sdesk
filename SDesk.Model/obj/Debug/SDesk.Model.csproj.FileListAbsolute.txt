@@ -3,3 +3,8 @@ D:\Lab\SDesk\SDesk.Model\bin\Debug\SDesk.Model.pdb
 D:\Lab\SDesk\SDesk.Model\obj\Debug\SDesk.Model.csprojResolveAssemblyReference.cache
 D:\Lab\SDesk\SDesk.Model\obj\Debug\SDesk.Model.dll
 D:\Lab\SDesk\SDesk.Model\obj\Debug\SDesk.Model.pdb
+D:\Programming\EPAM\Lab\SDesk\SDesk.Model\bin\Debug\SDesk.Model.dll
+D:\Programming\EPAM\Lab\SDesk\SDesk.Model\bin\Debug\SDesk.Model.pdb
+D:\Programming\EPAM\Lab\SDesk\SDesk.Model\obj\Debug\SDesk.Model.csprojResolveAssemblyReference.cache
+D:\Programming\EPAM\Lab\SDesk\SDesk.Model\obj\Debug\SDesk.Model.dll
+D:\Programming\EPAM\Lab\SDesk\SDesk.Model\obj\Debug\SDesk.Model.pdb

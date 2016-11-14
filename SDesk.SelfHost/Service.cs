@@ -4,7 +4,7 @@ namespace SDesk.SelfHost
 {
     internal class Service
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             HostFactory.Run(x =>
             {

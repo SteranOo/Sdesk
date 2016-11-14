@@ -5,3 +5,10 @@ D:\Lab\SDesk\SDesk.DAL\bin\Debug\SDesk.Model.pdb
 D:\Lab\SDesk\SDesk.DAL\obj\Debug\SDesk.DAL.csprojResolveAssemblyReference.cache
 D:\Lab\SDesk\SDesk.DAL\obj\Debug\SDesk.DAL.dll
 D:\Lab\SDesk\SDesk.DAL\obj\Debug\SDesk.DAL.pdb
+D:\Programming\EPAM\Lab\SDesk\SDesk.DAL\bin\Debug\SDesk.DAL.dll
+D:\Programming\EPAM\Lab\SDesk\SDesk.DAL\bin\Debug\SDesk.DAL.pdb
+D:\Programming\EPAM\Lab\SDesk\SDesk.DAL\bin\Debug\SDesk.Model.dll
+D:\Programming\EPAM\Lab\SDesk\SDesk.DAL\bin\Debug\SDesk.Model.pdb
+D:\Programming\EPAM\Lab\SDesk\SDesk.DAL\obj\Debug\SDesk.DAL.csprojResolveAssemblyReference.cache
+D:\Programming\EPAM\Lab\SDesk\SDesk.DAL\obj\Debug\SDesk.DAL.dll
+D:\Programming\EPAM\Lab\SDesk\SDesk.DAL\obj\Debug\SDesk.DAL.pdb
