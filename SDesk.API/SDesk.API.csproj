@@ -34,6 +34,10 @@
       <HintPath>..\packages\AutoMapper.5.1.1\lib\net45\AutoMapper.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
@@ -56,15 +60,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attributes\NullResponseAttribute.cs" />
     <Compile Include="Attributes\VersionedRoute.cs" />
-    <Compile Include="Configuration\HttpRoutesConfig.cs" />
+    <Compile Include="Configuration\WebApiConfig.cs" />
     <Compile Include="Constraints\JiraIdConstraint.cs" />
     <Compile Include="Constraints\VersionConstraint.cs" />
     <Compile Include="Controllers\AttachementsController.cs" />
     <Compile Include="Controllers\JiraItemsController.cs" />
-    <Compile Include="Controllers\MailsController.cs" />
     <Compile Include="Controllers\Mails2Controller.cs" />
+    <Compile Include="Controllers\MailsController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tracing\GlobalException.cs" />
+    <Compile Include="Tracing\GlobalExceptionHandler.cs" />
+    <Compile Include="Tracing\GlobalExceptionLogger.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SDesk.DAL\SDesk.DAL.csproj">

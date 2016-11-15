@@ -9,17 +9,16 @@ using static System.String;
 
 namespace SDesk.API.Controllers
 {
-    [VersionedRoute("api/mails", 1)]
     [RoutePrefix("api/mails/{id}/attachements")]
     public class AttachementsController : ApiController
     {
-        [Route("")]
+        [VersionedRoute("", 1)]
         public IHttpActionResult Get(int id)
         {
             return Ok(DbFake.Attachements.Where(x => x.MailId == id));
         }
 
-        [Route("{attId}")]
+        [VersionedRoute("{attId}", 1)]
         public IHttpActionResult Get(int id, int attId, string extention = null, int? status = null)
         {
             var result = new List<Attachement>();
@@ -37,14 +36,14 @@ namespace SDesk.API.Controllers
             return Ok(result);
         }
 
-        [Route("")]
+        [VersionedRoute("", 1)]
         public IHttpActionResult Post(int id, [FromBody]Attachement attachement)
         {
             DbFake.Attachements.Add(attachement);
             return Ok();
         }
 
-        [Route("{attId}")]
+        [VersionedRoute("{attId}", 1)]
         public IHttpActionResult Put(int id, int attId, [FromBody]Attachement attachement)
         {
             var entity = DbFake.Attachements.Find(x => x.MailId == id && x.Id == attId);
@@ -52,7 +51,7 @@ namespace SDesk.API.Controllers
             return Ok();
         }
 
-        [Route("{attId}")]
+        [VersionedRoute("{attId}", 1)]
         public IHttpActionResult Delete(int id, int attId)
         {
             DbFake.Attachements.Remove(DbFake.Attachements.Find(x => x.MailId == id && x.Id == attId));

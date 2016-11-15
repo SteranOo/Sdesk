@@ -1,12 +1,10 @@
 ﻿using System.Web.Http;
 using AutoMapper;
-using SDesk.API.Attributes;
 using SDesk.DAL;
 using SDesk.Model;
 
 namespace SDesk.API.Controllers
 {
-    [VersionedRoute("api/mails", 1)]
     public class MailsController : ApiController
     {
         public IHttpActionResult Get()
