@@ -39,6 +39,9 @@ namespace SDesk.API.Controllers
         [VersionedRoute("", 1)]
         public IHttpActionResult Post(int id, [FromBody]Attachement attachement)
         {
+            if (attachement == null)
+                return BadRequest("Attachement is null");
+
             DbFake.Attachements.Add(attachement);
             return Ok();
         }
@@ -46,6 +49,9 @@ namespace SDesk.API.Controllers
         [VersionedRoute("{attId}", 1)]
         public IHttpActionResult Put(int id, int attId, [FromBody]Attachement attachement)
         {
+            if (attachement == null)
+                return BadRequest("Attachement is null");
+
             var entity = DbFake.Attachements.Find(x => x.MailId == id && x.Id == attId);
             _mapper.Map(attachement, entity);
             return Ok();

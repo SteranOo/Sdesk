@@ -19,12 +19,18 @@ namespace SDesk.API.Controllers
       
         public IHttpActionResult Post([FromBody]Mail mail)
         {
+            if (mail == null)
+                return BadRequest("Mail is null");
+
             DbFake.Mails.Add(mail);
             return Ok();
         }
 
         public IHttpActionResult Put(int id, [FromBody]Mail mail)
         {
+            if (mail == null)
+                return BadRequest("Mail is null");
+
             var entity = DbFake.Mails.Find(x => x.Id == id);
             _mapper.Map(mail, entity);
             return Ok();

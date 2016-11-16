@@ -3,9 +3,10 @@ using WebActivatorEx;
 using SDesk.WebHost;
 using Swashbuckle.Application;
 using System;
-using System.Net.Http;
+using System.Linq;
 using System.Web.Http.Description;
-using SDesk.API.Constraints;
+using SDesk.API.Attributes;
+using Swashbuckle.Swagger;
 
 [assembly: PreApplicationStartMethod(typeof(SwaggerConfig), "Register")]
 
@@ -17,7 +18,7 @@ namespace SDesk.WebHost
         {
             var thisAssembly = typeof(SwaggerConfig).Assembly;
 
-            GlobalConfiguration.Configuration
+            GlobalConfiguration.Configuration 
                 .EnableSwagger(c =>
                     {
                         // By default, the service root url is inferred from the request used to access the docs.
@@ -43,13 +44,13 @@ namespace SDesk.WebHost
                         // included in the docs for a given API version. Like "SingleApiVersion", each call to "Version"
                         // returns an "Info" builder so you can provide additional metadata per API version.
                         //
-                        c.MultipleApiVersions(
-                            ResolveVersionSupportByRouteConstraint,
-                            vc =>
-                            {
-                                vc.Version("v2", "Swashbuckle Dummy API V2");
-                                vc.Version("v1", "Swashbuckle Dummy API V1");
-                            });
+                        //c.MultipleApiVersions(
+                        //    (apiDesc, targetApiVersion) => ResolveVersionSupportByRouteConstraint(apiDesc, targetApiVersion),
+                        //    (vc) =>
+                        //    {
+                        //        vc.Version("v2", "Swashbuckle Dummy API V2");
+                        //        vc.Version("v1", "Swashbuckle Dummy API V1");
+                        //    });
 
                         // You can use "BasicAuth", "ApiKey" or "OAuth2" options to describe security schemes for the API.
                         // See https://github.com/swagger-api/swagger-spec/blob/master/versions/2.0.md for more details.
@@ -101,7 +102,10 @@ namespace SDesk.WebHost
                         // those comments into the generated docs and UI. You can enable this by providing the path to one or
                         // more Xml comment files.
                         //
-                        //c.IncludeXmlComments("");
+
+                        var path = AppDomain.CurrentDomain.BaseDirectory;
+                        var xmlPath = path.Replace("WebHost", "API");
+                        c.IncludeXmlComments($@"{xmlPath}\SDesk.API.XML");
 
                         // Swashbuckle makes a best attempt at generating Swagger compliant JSON schemas for the various types
                         // exposed in your API. However, there may be occasions when more control of the output is needed.
@@ -172,6 +176,7 @@ namespace SDesk.WebHost
                         //
                         //c.ResolveConflictingActions(apiDescriptions => apiDescriptions.First());
 
+
                         // Wrap the default SwaggerGenerator with additional behavior (e.g. caching) or provide an
                         // alternative implementation for ISwaggerProvider with the CustomProvider option.
                         //
@@ -227,7 +232,7 @@ namespace SDesk.WebHost
                         // a discovery URL for each version. This provides a convenient way for users to browse documentation
                         // for different API versions.
                         //
-                        //c.EnableDiscoveryUrlSelector();
+                        c.EnableDiscoveryUrlSelector();
 
                         // If your API supports the OAuth2 Implicit flow, and you've described it correctly, according to
                         // the Swagger 2.0 specification, you can enable UI support as shown below.
@@ -243,21 +248,10 @@ namespace SDesk.WebHost
                         // If your API supports ApiKey, you can override the default values.
                         // "apiKeyIn" can either be "query" or "header"                                                
                         //
-                        //c.EnableApiKeySupport("apiKey", "header");
+                        c.EnableApiKeySupport("apiKey", "header");
                     });
         }
 
-        private static bool ResolveVersionSupportByRouteConstraint(ApiDescription apiDesc, string targetApiVersion)
-        {
-            object version;
-            var allowedVersion = 0;
-            apiDesc.Route.Constraints.TryGetValue("version", out version);
-            if (version != null)
-                allowedVersion = ((VersionConstraint)version).AllowedVersion;
-            else if (targetApiVersion.Equals("v1"))
-                return true;
-
-            return targetApiVersion.Equals($"v{allowedVersion}");
-        }
+       
     }
 }

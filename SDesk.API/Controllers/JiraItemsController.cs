@@ -13,6 +13,9 @@ namespace SDesk.API.Controllers
         [Route("api/jiraitems/{id:jiraid}")]
         public IHttpActionResult Get(string id)
         {
+            if(id == null)
+                return BadRequest("Id is null");
+
             var jiraId = int.Parse(id.Split('-')[1]);
             return Ok(DbFake.JiraItems.Find(x => x.JiraItemId == jiraId));
         }
