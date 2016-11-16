@@ -75,6 +75,7 @@
   <ItemGroup>
     <Compile Include="Attributes\NullResponseAttribute.cs" />
     <Compile Include="Attributes\VersionedRoute.cs" />
+    <Compile Include="Services\VersionedApiExplorer.cs" />
     <Compile Include="Configuration\WebApiConfig.cs" />
     <Compile Include="Constraints\JiraIdConstraint.cs" />
     <Compile Include="Constraints\VersionConstraint.cs" />

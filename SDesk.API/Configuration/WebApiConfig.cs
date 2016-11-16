@@ -1,8 +1,10 @@
 ﻿using System.Web.Http;
+using System.Web.Http.Description;
 using System.Web.Http.ExceptionHandling;
 using System.Web.Http.Routing;
 using SDesk.API.Attributes;
 using SDesk.API.Constraints;
+using SDesk.API.Services;
 using SDesk.API.Tracing;
 
 namespace SDesk.API.Configuration
@@ -14,6 +16,9 @@ namespace SDesk.API.Configuration
             log4net.Config.XmlConfigurator.Configure();
             config.Services.Replace(typeof(IExceptionHandler), new GlobalExceptionHandler());
             config.Services.Replace(typeof(IExceptionLogger), new GlobalExceptionLogger());
+
+            var apiExplorer = config.Services.GetApiExplorer();
+            config.Services.Replace(typeof(IApiExplorer), new VersionedApiExplorer<VersionConstraint>(apiExplorer, config));
 
             var constraintResolver = new DefaultInlineConstraintResolver();
             constraintResolver.ConstraintMap.Add("jiraid", typeof(JiraIdConstraint));

@@ -4,5 +4,188 @@
         <name>SDesk.API</name>
     </assembly>
     <members>
+        <member name="T:SDesk.API.Controllers.AttachementsController">
+            <summary>
+            v1 Attachements Controller
+            </summary>
+        </member>
+        <member name="M:SDesk.API.Controllers.AttachementsController.Get(System.Int32)">
+            <summary>
+            Get all mails attachments
+            </summary>
+            <param name="id">Mail Id</param>
+            <returns>List of Attachments</returns>
+        </member>
+        <member name="M:SDesk.API.Controllers.AttachementsController.Get(System.Int32,System.Int32,System.String,System.Nullable{System.Int32})">
+            <summary>
+            Get mail attachments by attachent id or if its value is 0, by extention and/or status 
+            </summary>
+            <param name="id">Mail Id</param>
+            <param name="attId">Attachent Id</param>
+            <param name="extention">Extention</param>
+            <param name="status">Status</param>
+            <returns>List of Attachments</returns>
+        </member>
+        <member name="M:SDesk.API.Controllers.AttachementsController.Post(System.Int32,SDesk.Model.Attachement)">
+            <summary>
+            Add new attachment to mail by id
+            </summary>
+            <param name="id">Mail Id</param>
+            <param name="attachement">Attachement</param>
+            <returns></returns>
+        </member>
+        <member name="M:SDesk.API.Controllers.AttachementsController.Put(System.Int32,System.Int32,SDesk.Model.Attachement)">
+            <summary>
+            Update attachment by id
+            </summary>
+            <param name="id">Mail Id</param>
+            <param name="attId">Attachment Id</param>
+            <param name="attachement">Attachment</param>
+            <returns></returns>
+        </member>
+        <member name="M:SDesk.API.Controllers.AttachementsController.Delete(System.Int32,System.Int32)">
+            <summary>
+            Delete attachment by id
+            </summary>
+            <param name="id">Mail Id</param>
+            <param name="attId">Attachment Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:SDesk.API.Controllers.JiraItemsController.Get(System.Int32)">
+            <summary>
+            Get JiraItem by id
+            </summary>
+            <param name="id">Id</param>
+            <returns>JiraItem</returns>
+        </member>
+        <member name="M:SDesk.API.Controllers.JiraItemsController.Get(System.String)">
+            <summary>
+            Get JiraItem by Jira-id
+            </summary>
+            <param name="jira_Id">Jira-id (ex. Jira-1)</param>
+            <returns>JiraItem</returns>
+        </member>
+        <member name="T:SDesk.API.Controllers.Mails2Controller">
+            <summary>
+            v2 Mails and Attachements Controller
+            </summary>
+        </member>
+        <member name="M:SDesk.API.Controllers.Mails2Controller.Get">
+            <summary>
+            Get All Mails
+            </summary>
+            <returns>List of Mails</returns>
+        </member>
+        <member name="M:SDesk.API.Controllers.Mails2Controller.Get(System.Int32)">
+            <summary>
+            Get Mail by id
+            </summary>
+            <param name="id">Mail Id</param>
+            <returns>Mail</returns>
+        </member>
+        <member name="M:SDesk.API.Controllers.Mails2Controller.Post(SDesk.Model.Mail)">
+            <summary>
+            Add new Mail
+            </summary>
+            <param name="mail">Mail</param>
+            <returns></returns>
+        </member>
+        <member name="M:SDesk.API.Controllers.Mails2Controller.Put(System.Int32,SDesk.Model.Mail)">
+            <summary>
+            Update Mail by Id
+            </summary>
+            <param name="id">Mail Id</param>
+            <param name="mail">Mail</param>
+            <returns></returns>
+        </member>
+        <member name="M:SDesk.API.Controllers.Mails2Controller.Delete(System.Int32)">
+            <summary>
+            Delete Mail by Id
+            </summary>
+            <param name="id">Mail Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:SDesk.API.Controllers.Mails2Controller.GetAttachement(System.Int32)">
+            <summary>
+            Get all mails attachments
+            </summary>
+            <param name="id">Mail Id</param>
+            <returns>List of Attachments</returns>
+        </member>
+        <member name="M:SDesk.API.Controllers.Mails2Controller.GetAttachement(System.Int32,System.Int32,System.String,System.Nullable{System.Int32})">
+            <summary>
+            Get mail attachments by attachent id or if its value is 0, by extention and/or status 
+            </summary>
+            <param name="id">Mail Id</param>
+            <param name="attId">Attachent Id</param>
+            <param name="extention">Extention</param>
+            <param name="status">Status</param>
+            <returns>List of Attachments</returns>
+        </member>
+        <member name="M:SDesk.API.Controllers.Mails2Controller.PostAttachement(System.Int32,SDesk.Model.Attachement)">
+            <summary>
+            Add new attachment to mail by id
+            </summary>
+            <param name="id">Mail Id</param>
+            <param name="attachement">Attachement</param>
+            <returns></returns>
+        </member>
+        <member name="M:SDesk.API.Controllers.Mails2Controller.PutAttachement(System.Int32,System.Int32,SDesk.Model.Attachement)">
+            <summary>
+            Update attachment by id
+            </summary>
+            <param name="id">Mail Id</param>
+            <param name="attId">Attachment Id</param>
+            <param name="attachement">Attachment</param>
+            <returns></returns>
+        </member>
+        <member name="M:SDesk.API.Controllers.Mails2Controller.DeleteAttachement(System.Int32,System.Int32)">
+            <summary>
+            Delete attachment by id
+            </summary>
+            <param name="id">Mail Id</param>
+            <param name="attId">Attachment Id</param>
+            <returns></returns>
+        </member>
+        <member name="T:SDesk.API.Controllers.MailsController">
+            <summary>
+            v1 Mails Controller
+            </summary>
+        </member>
+        <member name="M:SDesk.API.Controllers.MailsController.Get">
+            <summary>
+            Get All Mails
+            </summary>
+            <returns>List of Mails</returns>
+        </member>
+        <member name="M:SDesk.API.Controllers.MailsController.Get(System.Int32)">
+            <summary>
+            Get Mail by id
+            </summary>
+            <param name="id">Mail Id</param>
+            <returns>Mail</returns>
+        </member>
+        <member name="M:SDesk.API.Controllers.MailsController.Post(SDesk.Model.Mail)">
+            <summary>
+            Add new Mail
+            </summary>
+            <param name="mail">Mail</param>
+            <returns></returns>
+        </member>
+        <member name="M:SDesk.API.Controllers.MailsController.Put(System.Int32,SDesk.Model.Mail)">
+            <summary>
+            Update Mail by Id
+            </summary>
+            <param name="id">Mail Id</param>
+            <param name="mail">Mail</param>
+            <returns></returns>
+        </member>
+        <member name="M:SDesk.API.Controllers.MailsController.Delete(System.Int32)">
+            <summary>
+            Delete Mail by Id
+            </summary>
+            <param name="id">Mail Id</param>
+            <returns></returns>
+        </member>
     </members>
 </doc>

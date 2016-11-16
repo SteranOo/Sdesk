@@ -9,15 +9,31 @@ using static System.String;
 
 namespace SDesk.API.Controllers
 {
+    /// <summary>
+    /// v1 Attachements Controller
+    /// </summary>
     [RoutePrefix("api/mails/{id}/attachements")]
     public class AttachementsController : ApiController
     {
+        /// <summary>
+        /// Get all mails attachments
+        /// </summary>
+        /// <param name="id">Mail Id</param>
+        /// <returns>List of Attachments</returns>
         [VersionedRoute("", 1)]
         public IHttpActionResult Get(int id)
         {
             return Ok(DbFake.Attachements.Where(x => x.MailId == id));
         }
 
+        /// <summary>
+        /// Get mail attachments by attachent id or if its value is 0, by extention and/or status 
+        /// </summary>
+        /// <param name="id">Mail Id</param>
+        /// <param name="attId">Attachent Id</param>
+        /// <param name="extention">Extention</param>
+        /// <param name="status">Status</param>
+        /// <returns>List of Attachments</returns>
         [VersionedRoute("{attId}", 1)]
         public IHttpActionResult Get(int id, int attId, string extention = null, int? status = null)
         {
@@ -36,6 +52,12 @@ namespace SDesk.API.Controllers
             return Ok(result);
         }
 
+        /// <summary>
+        /// Add new attachment to mail by id
+        /// </summary>
+        /// <param name="id">Mail Id</param>
+        /// <param name="attachement">Attachement</param>
+        /// <returns></returns>
         [VersionedRoute("", 1)]
         public IHttpActionResult Post(int id, [FromBody]Attachement attachement)
         {
@@ -46,6 +68,13 @@ namespace SDesk.API.Controllers
             return Ok();
         }
 
+        /// <summary>
+        /// Update attachment by id
+        /// </summary>
+        /// <param name="id">Mail Id</param>
+        /// <param name="attId">Attachment Id</param>
+        /// <param name="attachement">Attachment</param>
+        /// <returns></returns>
         [VersionedRoute("{attId}", 1)]
         public IHttpActionResult Put(int id, int attId, [FromBody]Attachement attachement)
         {
@@ -57,6 +86,12 @@ namespace SDesk.API.Controllers
             return Ok();
         }
 
+        /// <summary>
+        /// Delete attachment by id
+        /// </summary>
+        /// <param name="id">Mail Id</param>
+        /// <param name="attId">Attachment Id</param>
+        /// <returns></returns>
         [VersionedRoute("{attId}", 1)]
         public IHttpActionResult Delete(int id, int attId)
         {
